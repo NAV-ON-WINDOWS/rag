@@ -11,7 +11,8 @@ def load_files(docs_path="docs"):
     loader = DirectoryLoader(
         docs_path,
         glob="*.txt",
-        loader_cls=TextLoader
+        loader_cls=TextLoader,
+        loader_kwargs={'encoding': 'utf-8'}  # Explicitly force UTF-8 encoding
     )
     return loader.load()
 
